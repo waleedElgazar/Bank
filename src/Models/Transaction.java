@@ -64,6 +64,15 @@ public class Transaction {
         Status = status;
     }
 
+
+    public Transaction.ServiceProvider getServiceProvider() {
+        return ServiceProvider;
+    }
+
+    public void setServiceProvider(Transaction.ServiceProvider serviceProvider) {
+        ServiceProvider = serviceProvider;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
@@ -72,6 +81,7 @@ public class Transaction {
                 ", ToAccount=" + ToAccount +
                 ", Amount=" + Amount +
                 ", Status=" + Status +
+                ", ServiceProvider=" + ServiceProvider +
                 '}';
     }
 }

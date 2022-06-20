@@ -7,4 +7,5 @@ public interface AccountServices {
     public void DeleteAccount(int id);
     public boolean Deposit(int AccountId,float amount);
     public boolean Withdraw(int AccountId,float amount);
+
 }
