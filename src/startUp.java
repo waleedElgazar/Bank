@@ -14,6 +14,5 @@ public class startUp {
         if(transaction1.Transfer(from,to,transaction.getAmount())){
             transaction.setStatus(true);
         }
-        System.out.println(transaction.toString());
     }
 }

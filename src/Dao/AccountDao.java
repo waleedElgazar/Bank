@@ -1,5 +1,7 @@
 package Dao;
 
+import Factory.NotifyController;
+import Factory.inter.Notification;
 import Models.Account;
 
 import java.util.ArrayList;
@@ -29,12 +31,9 @@ public class AccountDao {
             float after = balance - amount;
             accounts.get(id).setBalance(after);
             //System.out.println(accounts.get(id).toString());
-            System.out.println(code);
-            if(code==1){
-                System.out.println(SendSMS(id,"Withdraw",amount));;
-            }else if (code ==2){
-                System.out.println(SendEmail(id,"Withdraw",amount));;
-            }
+            NotifyController notifyController=new NotifyController();
+            Notification notification=notifyController.Notifer(code);
+            notification.SendNotify();
             return true;
         }
     }
@@ -48,12 +47,9 @@ public class AccountDao {
             float after = balance + amount;
             accounts.get(id).setBalance(after);
             //System.out.println(accounts.get(id).toString());
-            System.out.println(code);
-            if(code==1){
-                System.out.println(SendSMS(id,"deposit",amount));;
-            }else if (code ==2){
-                System.out.println(SendEmail(id,"deposit",amount));;
-            }
+            NotifyController notifyController=new NotifyController();
+            Notification notification=notifyController.Notifer(code);
+            notification.SendNotify();
             return true;
         }
     }
