@@ -1,6 +1,6 @@
-package Factory.Banks;
+package Models;
 
-import Factory.inter.Notification;
+import Services.Notification;
 
 public class Alahly implements Notification {
     @Override

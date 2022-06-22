@@ -1,10 +1,11 @@
 package ServicesImpl;
 
 import Dao.AccountDao;
+import Models.Alahly;
+import Models.Misr;
 import Models.Account;
 import Services.AccountServices;
-
-import java.util.ArrayList;
+import Services.Notification;
 
 public class AccountImp implements AccountServices {
     AccountDao accountDao=new AccountDao();
@@ -29,6 +30,13 @@ public class AccountImp implements AccountServices {
     }
 
 
-
-
+    public static class NotifyController {
+        public Notification Notifer(int code){
+            if (code==1){
+                return new Alahly();
+            }else{
+                return new Misr();
+            }
+        }
+    }
 }

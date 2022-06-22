@@ -1,8 +1,8 @@
 package Dao;
 
-import Factory.NotifyController;
-import Factory.inter.Notification;
+import Services.Notification;
 import Models.Account;
+import ServicesImpl.AccountImp;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class AccountDao {
             float after = balance - amount;
             accounts.get(id).setBalance(after);
             //System.out.println(accounts.get(id).toString());
-            NotifyController notifyController=new NotifyController();
+            AccountImp.NotifyController notifyController=new AccountImp.NotifyController();
             Notification notification=notifyController.Notifer(code);
             notification.SendNotify();
             return true;
@@ -47,7 +47,7 @@ public class AccountDao {
             float after = balance + amount;
             accounts.get(id).setBalance(after);
             //System.out.println(accounts.get(id).toString());
-            NotifyController notifyController=new NotifyController();
+            AccountImp.NotifyController notifyController=new AccountImp.NotifyController();
             Notification notification=notifyController.Notifer(code);
             notification.SendNotify();
             return true;
